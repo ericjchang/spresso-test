@@ -49,7 +49,7 @@ const columns: TableColumn<User>[] = [
     label: 'Company',
     sortable: true,
     width: '200px',
-    render: (value: string, row: User) => (
+    render: (_: string, row: User) => (
       <div>
         <div className='font-medium'>{row.company.name}</div>
         <div className='text-sm text-gray-500'>{row.company.catchPhrase}</div>
