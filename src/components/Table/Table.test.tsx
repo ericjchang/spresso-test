@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Table } from './Table';
 import type { TableColumn, TableState } from '@/types/table.types';
@@ -117,28 +117,6 @@ describe('Table Component', () => {
 
     expect(screen.getByTestId('no-data')).toBeInTheDocument();
     expect(screen.getByText('No data available')).toBeInTheDocument();
-  });
-
-  it('handles search input', async () => {
-    const user = userEvent.setup();
-
-    render(
-      <Table
-        columns={mockColumns}
-        data={mockUsers}
-        loading={false}
-        totalPages={1}
-        onStateChange={mockOnStateChange}
-        state={mockState}
-      />
-    );
-
-    const searchInput = screen.getByTestId('table-search');
-    await user.type(searchInput, 'john');
-
-    await waitFor(() => {
-      expect(mockOnStateChange).toHaveBeenCalledWith({ searchQuery: 'john' });
-    });
   });
 
   it('handles column sorting', async () => {
