@@ -3,6 +3,7 @@ import { useTableState } from '@/hooks/useTableState';
 import { useTableData } from '@/hooks/useTableData';
 import type { TableColumn } from '@/types/table.types';
 import type { User } from '@/types/api.types';
+import './App.css';
 
 const columns: TableColumn<User>[] = [
   {
