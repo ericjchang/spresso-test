@@ -28,9 +28,15 @@ export const fetchUser = async (
         const aValue = getNestedValue(a, sortBy);
         const bValue = getNestedValue(b, sortBy);
 
-        if (aValue < bValue) return sortOrder === 'asc' ? -1 : 1;
-        if (aValue > bValue) return sortOrder === 'desc' ? 1 : -1;
-        return 0;
+        if (typeof aValue === 'string' && typeof bValue === 'string') {
+          return sortOrder === 'asc' ? aValue.localeCompare(bValue) : bValue.localeCompare(aValue);
+        } else if (typeof aValue === 'number' && typeof bValue === 'number') {
+          return sortOrder === 'asc' ? aValue - bValue : bValue - aValue;
+        } else {
+          if (aValue < bValue) return sortOrder === 'asc' ? -1 : 1;
+          if (aValue > bValue) return sortOrder === 'desc' ? 1 : -1;
+          return 0;
+        }
       });
     }
 
@@ -53,5 +59,9 @@ export const fetchUser = async (
 };
 
 const getNestedValue = (obj: any, path: string): any => {
-  return path.split('.').reduce((curr, key) => curr?.[key], obj) || '';
+  const value = path.split('.').reduce((current, key) => {
+    return current && typeof current === 'object' ? current[key] : undefined;
+  }, obj);
+
+  return value;
 };
