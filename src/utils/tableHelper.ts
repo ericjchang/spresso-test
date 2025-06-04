@@ -79,3 +79,20 @@ export const buildUrlParams = (state: TableState): URLSearchParams => {
 
   return params;
 };
+
+export const toggleRowSelection = (selectedRows: (string | number)[], rowId: string | number): (string | number)[] => {
+  if (selectedRows.includes(rowId)) {
+    return selectedRows.filter(id => id !== rowId);
+  }
+  return [...selectedRows, rowId];
+};
+
+export const toggleAllRowsSelection = (
+  selectedRows: (string | number)[],
+  allRowIds: (string | number)[]
+): (string | number)[] => {
+  if (selectedRows.length === allRowIds.length) {
+    return [];
+  }
+  return [...allRowIds];
+};

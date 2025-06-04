@@ -21,7 +21,7 @@ export interface TableState {
 }
 
 export interface TableProps<T extends TableRow> {
-  columns: TableColumn<T>;
+  columns: TableColumn<T>[];
   data: T[];
   loading?: boolean;
   totalPages: number;
