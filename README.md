@@ -19,6 +19,7 @@ Reusable table component with sorting, filtering, pagination, and row selection.
 - **Typescript:** 5.8.3
 - **React:** 19.1.0
 - **Lodash:** 4.17.21
+- **Tailwind:** 4.1.8
 
 <br/>
 
