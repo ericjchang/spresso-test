@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
-import { TableState } from '@/types/table.types';
+import type { TableState } from '@/types/table.types';
 import { parseUrlParams, buildUrlParams } from '@/utils/tableHelper';
 
 export const useUrlParams = () => {
