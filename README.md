@@ -1,54 +1,83 @@
-# React + TypeScript + Vite
+# Spresso Take-Home Challenge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Reusable table component with sorting, filtering, pagination, and row selection.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Demo
 
-## Expanding the ESLint configuration
+[ericjchang.cloud/spresso](https://ericjchang.cloud/spresso/)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Dev Environment
+
+- **Node:** 22.16.0
+- **NPM:** 11.41
+
+## Tech Stack
+
+- **Vite:** 6.3.5
+- **Typescript:** 5.8.3
+- **React:** 19.1.0
+- **Lodash:** 4.17.21
+
+---
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/ericjchang/spresso-test.git
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Go to the project directory
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+  cd spresso-test
 ```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run start
+```
+
+<br/>
+
+## Running Tests
+
+To run tests, run the following command
+
+```bash
+  npm run test
+```
+
+For testing using Vitest UI, run the following command
+
+```bash
+  npm run test:ui
+```
+
+---
+
+## Features
+
+🔍 Search across name, email, and username fields with real-time filtering.
+
+📊 Click on sortable column headers to sort data in ascending or descending order.
+
+📄 Navigate through data with next/previous buttons and page indicators.
+
+✅ Select individual rows or all rows with checkboxes. Selected data is displayed below.
+
+🔗 All table state is managed via URL parameters for bookmarkable and shareable links.
+
+⚡ Async Data,Demonstrates loading states and error handling with simulated API calls.
