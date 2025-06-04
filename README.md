@@ -2,13 +2,9 @@
 
 Reusable table component with sorting, filtering, pagination, and row selection.
 
----
-
 ## Demo
 
 [ericjchang.cloud/spresso](https://ericjchang.cloud/spresso/)
-
----
 
 ## Dev Environment
 
@@ -21,8 +17,6 @@ Reusable table component with sorting, filtering, pagination, and row selection.
 - **Typescript:** 5.8.3
 - **React:** 19.1.0
 - **Lodash:** 4.17.21
-
----
 
 ## Run Locally
 
@@ -65,8 +59,6 @@ For testing using Vitest UI, run the following command
 ```bash
   npm run test:ui
 ```
-
----
 
 ## Features
 
